@@ -53,13 +53,6 @@ public class Atheist : Role
                 if (item != null)
                     list1D.Add(item);
             }
-            foreach (var item in list1D)
-            {
-                if (item != null)
-                {
-                    MelonLogger.Msg(item.name);
-                }
-            }
 
             Il2CppSystem.Collections.Generic.List<CharacterData> list2D = instanceD.hh(list1D);
             Il2CppSystem.Collections.Generic.List<CharacterData> list3D = instanceD.gp(list2D, ECharacterType.Demon);
@@ -68,6 +61,10 @@ public class Atheist : Role
                 return;
             }
             CharacterData randomDataD = list3D[UnityEngine.Random.RandomRangeInt(0, list3D.Count)];
+            while (randomDataD.name == "Mutant")
+            {
+                randomDataD = list3D[UnityEngine.Random.RandomRangeInt(0, list3D.Count)];
+            }
             gameplayD.ml(ECharacterType.Demon, randomDataD);
         }
     }
