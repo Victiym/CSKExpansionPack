@@ -13,7 +13,7 @@ using UnityEngine;
 using static Il2Cpp.Interop;
 using static Il2CppSystem.Array;
 
-[assembly: MelonInfo(typeof(MainMod), "CSK's Expansion Pack", "1.1", "CharaDr33murr")]
+[assembly: MelonInfo(typeof(MainMod), "CSK's Expansion Pack", "1.2", "CharaDr33murr")]
 [assembly: MelonGame("UmiArt", "Demon Bluff")]
 
 namespace ExpansionPack;
@@ -137,24 +137,30 @@ public class MainMod : MelonMod
         converted.color = new Color(0.8491f, 0.4555f, 0f);
         converted.tags = new Il2CppSystem.Collections.Generic.List<ECharacterTag>();
 
-        /*CharacterData sapper = new CharacterData();
-        sapper.role = new Sapper();
-        sapper.name = "Sapper";
-        sapper.description = "<b>At Night:</b>\nDeal 1 damage to you.\n\nI Lie and Disguise.";
-        sapper.flavorText = "\"He's overly enthusiastic about having a sledgehammer, but nobody's caught on yet.\"";
-        sapper.hints = "";
-        sapper.ifLies = "";
-        sapper.picking = false;
-        sapper.startingAlignment = EAlignment.Evil;
-        sapper.type = ECharacterType.Minion;
-        sapper.abilityUsage = EAbilityUsage.Once;
-        sapper.bluffable = false;
-        sapper.characterId = "Sapper_EP";
-        sapper.artBgColor = new Color(1f, 0f, 0f);
-        sapper.cardBgColor = new Color(0.0941f, 0.0431f, 0.0431f);
-        sapper.cardBorderColor = new Color(0.8208f, 0f, 0.0241f);
-        sapper.color = new Color(0.8491f, 0.4555f, 0f);
-        sapper.backgroundArt = getSprite("evil");*/
+        CharacterData cavalier = new CharacterData();
+        cavalier.role = new Cavalier();
+        cavalier.name = "Cavalier";
+        cavalier.description = "<b>At Night:</b>\nLose 1 Health.\r\n\nI Lie and Disguise.";
+        cavalier.flavorText = "\"He's overly enthusiastic about having a sledgehammer, but nobody's caught on yet.\"";
+        cavalier.hints = "";
+        cavalier.ifLies = "";
+        cavalier.notes = "";
+        cavalier.picking = false;
+        cavalier.startingAlignment = EAlignment.Evil;
+        cavalier.type = ECharacterType.Minion;
+        cavalier.abilityUsage = EAbilityUsage.Once;
+        cavalier.bluffable = false;
+        cavalier.characterId = "Cavalier_EP";
+        cavalier.artBgColor = new Color(1f, 0f, 0f);
+        cavalier.cardBgColor = new Color(0.0941f, 0.0431f, 0.0431f);
+        cavalier.cardBorderColor = new Color(0.8208f, 0f, 0.0241f);
+        cavalier.color = new Color(0.8491f, 0.4555f, 0f);
+        belias.backgroundArt = getSprite("evil");
+        cavalier.tags = new Il2CppSystem.Collections.Generic.List<ECharacterTag>();
+
+        GameObject content = GameObject.Find("Game/Gameplay/Content");
+        NightPhase nightPhase = content.GetComponent<NightPhase>();
+        nightPhase.nightCharactersOrder.Add(cavalier);
 
         CustomScriptData beliasScriptData = new CustomScriptData();
         beliasScriptData.name = "Belias_1";
@@ -225,7 +231,7 @@ public class MainMod : MelonMod
             addRole(script.startingTownsfolks, cleric);
             addRole(script.startingTownsfolks, assassin);
             addRole(script.startingOutsiders, atheist);
-            //addRole(script.startingMinions, sapper);
+            addRole(script.startingMinions, cavalier);
         }
     }
     public void addRole(Il2CppSystem.Collections.Generic.List<CharacterData> list, CharacterData data)
