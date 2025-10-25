@@ -2,7 +2,11 @@
 
 This Demon Bluff mod adds new characters to the game. Currently doesn't work on Standard mode.
 
-The three characters in this Mod are Cleric (Good Villager), Assassin (Good Villager) and Atheist (Good Outcast).
+The three characters in this Mod are:
+
+- Cleric (Good Villager)
+- Assassin (Good Villager)
+- Atheist (Good Outcast)
 
 You can download the file ending in .dll with the role name for the optional roles.
 
