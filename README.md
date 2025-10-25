@@ -7,7 +7,8 @@ The three characters in this Mod are Cleric (Good Villager), Assassin (Good Vill
 You can download the file ending in .dll with the role name for the optional roles.
 
 Current optional Add-On roles:
-Exorcist (Good Outcast)
+
+- Exorcist (Good Outcast)
 
 Please download ArtSwap alongside this mod, as it doesn't have default character sprites.
 
