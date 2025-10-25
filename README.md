@@ -8,7 +8,7 @@ The three characters in this Mod are:
 - Assassin (Good Villager)
 - Atheist (Good Outcast)
 
-You can use optional roles by dowloading the file ending in .dll with optional role name.
+You can use optional roles by dowloading the file ending in .dll with the optional role name.
 
 Current optional Add-On roles:
 
